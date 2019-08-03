@@ -7,6 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
+Faker::Config.locale = 'fr'
+
 User.destroy_all
 City.destroy_all
 Listing.destroy_all
@@ -21,7 +23,7 @@ puts "User created"
 
 10.times do
 	array = ["Paris","Lyon","Marseille","Grenoble","Montcuq","Cassis","Plaisir","St-Denis","Tours","Angles"]
-	City.create(name: array.sample, zip_code: Faker::Number.number(digits: 5))
+	City.create(name: Faker::Address.city, zip_code: Faker::Address.zip_code)
 end
 
 puts "City created"
