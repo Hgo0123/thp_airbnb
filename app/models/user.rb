@@ -1,7 +1,7 @@
 class User < ApplicationRecord
-	has_many :flats, foreign_key: 'admin_id', class_name: 'Listing'
+	has_many :listings, foreign_key: 'admin_id'
 	has_many :cities, through: :listings
-	has_many :bookings, foreign_key: 'guest_id', class_name: 'Reservation'
+	has_many :reservations, foreign_key: 'guest_id'
 
 	validates :email, 
 		presence: true,

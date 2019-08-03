@@ -26,6 +26,6 @@ Listing.create(available_bed: rand(1..5) ,price: rand(10..120) ,description: Fak
 end
 
 10.times do 
-	Reservation.create(start_date: Date.today, end_date: Faker::Date.backward(days: 90) , guest: User.all.sample, listing: Listing.all.sample)
+	Reservation.create(start_date: Date.today, end_date: Faker::Date.forward(days: 90) , guest: User.all.sample, listing: Listing.all.sample)
 end
 puts "Base de données crée chef !"
