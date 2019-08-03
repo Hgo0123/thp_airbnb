@@ -18,7 +18,7 @@ class Reservation < ApplicationRecord
 	def duration
     end_date.to_i
     start_date.to_i
-    return duration = ((end_date - start_date)/(1000*60*60*24))
+    return duration = ((end_date - start_date)*(1.1574E-8)).round(7).days
    end
 
   def overlaping_reservation?
