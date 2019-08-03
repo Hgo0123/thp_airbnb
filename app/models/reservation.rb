@@ -29,6 +29,6 @@ class Reservation < ApplicationRecord
     end 
     errors.add(:start_date, "The listing is already booked for those dates ") unless
       overlap == false
-    # vérifie dans toutes les réservations du listing s'il y a une réservation qui tombe sur le datetime en entrée
+    
   end
 end
